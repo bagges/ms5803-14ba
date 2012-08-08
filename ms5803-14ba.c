@@ -23,7 +23,7 @@ void doSecondOrderTemperatureCompensation(CalculatedValues *values) {
         OFF2 = 3 * pow((values->TEMP - 2000), 2) / pow(2, 1);
         SENS2 = 5 * pow((values->TEMP - 2000), 2) / pow(2, 3);
 
-        if (values->TEMP < -15000) {
+        if (values->TEMP < -1500) {
             //VERY LOW TEMP
             OFF2 = OFF2 + (7 * pow((values->TEMP + 1500), 2));
             SENS2 = SENS2 + (4 * pow((values->TEMP + 1500), 2));
