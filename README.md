@@ -1,0 +1,1 @@
+This library contains functions to calculate temperature and pressure like described in the datasheet from the manufacturer.
