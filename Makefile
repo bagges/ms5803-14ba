@@ -2,10 +2,14 @@ CC      = /usr/bin/gcc
 CFLAGS  = -Wall
 LDFLAGS = -lm
 
-OUT = ms5803-14ba
+ms5803_out = ms5803-14ba.o
+main_out = main
+
+main: ms5803-14ba main.c
+	$(CC) $(CFLAGS) -o $(main_out) main.c $(ms5803_out) $(LDFLAGS)
 
 ms5803-14ba: ms5803-14ba.c
-	        $(CC) $(CFLAGS) -o $(OUT) ms5803-14ba.c $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $(ms5803_out) -c ms5803-14ba.c $(LDFLAGS)
 
 clean:
-	rm -rf $(OUT)
+	rm -rf $(ms5803_out) $(main_out) 
